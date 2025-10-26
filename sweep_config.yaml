@@ -1,0 +1,16 @@
+program: vgg6_wandb.py
+method: random
+metric:
+  name: val_acc
+  goal: maximize
+parameters:
+  activation:
+    values: ["ReLU", "Tanh", "Sigmoid", "SiLU", "GELU"]
+  optimizer:
+    values: ["SGD", "Adam", "RMSprop", "Nadam"]
+  batch_size:
+    values: [64, 128, 256]
+  learning_rate:
+    values: [0.0005, 0.001, 0.002]
+  epochs:
+    value: 20
